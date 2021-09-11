@@ -34,4 +34,4 @@ lint:
     mypy .
 
 run:
-	uvicorn --host=0.0.0.0 --port=5022 --reload customer_integrations_service.api.app:app
+	uvicorn --host=0.0.0.0 --port=5111 --reload backend.api.app:app
