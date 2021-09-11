@@ -4,6 +4,7 @@ alembic~=1.7
 asyncpg~=0.24
 fastapi~=0.68
 grequests~=0.6
+httpx~=0.19
 sqlalchemy~=1.4
 uvicorn>=0.15
 
@@ -14,3 +15,9 @@ black
 flake8>=3.9
 isort>=5
 mypy
+
+# test
+faker
+mock
+pytest-asyncio
+responses
