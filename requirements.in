@@ -1,0 +1,16 @@
+# From official PyPI (https://pypi.org/)
+# ======================================
+alembic~=1.7
+asyncpg~=0.24
+fastapi~=0.68
+grequests~=0.6
+sqlalchemy~=1.4
+uvicorn>=0.15
+
+# dev requirements
+# ==============================================
+# lint
+black
+flake8>=3.9
+isort>=5
+mypy
