@@ -2,11 +2,13 @@
 # ======================================
 alembic~=1.7
 asyncpg~=0.24
+asyncpgsa~=0.24
 fastapi~=0.68
 grequests~=0.6
 httpx~=0.19
-sqlalchemy~=1.4
+sqlalchemy[asyncio]
 uvicorn>=0.15
+sqlalchemy_utils
 
 # dev requirements
 # ==============================================
