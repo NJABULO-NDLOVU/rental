@@ -11,6 +11,10 @@ anyio==3.3.1
 asgiref==3.4.1
     # via uvicorn
 asyncpg==0.24.0
+    # via
+    #   -r requirements.in
+    #   asyncpgsa
+asyncpgsa==0.27.1
     # via -r requirements.in
 attrs==21.2.0
     # via pytest
@@ -113,15 +117,20 @@ six==1.16.0
     # via
     #   python-dateutil
     #   responses
+    #   sqlalchemy-utils
 sniffio==1.2.0
     # via
     #   anyio
     #   httpcore
     #   httpx
-sqlalchemy==1.4.23
+sqlalchemy[asyncio]==1.4.23
     # via
     #   -r requirements.in
     #   alembic
+    #   asyncpgsa
+    #   sqlalchemy-utils
+sqlalchemy-utils==0.37.8
+    # via -r requirements.in
 starlette==0.14.2
     # via fastapi
 text-unidecode==1.3

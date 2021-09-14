@@ -38,3 +38,9 @@ run:
 
 test:
     pytest .
+
+makemigrations:
+	python -m backend.db.cli auto-migrate
+
+migrate:
+	python -m backend.db.cli upgrade-db

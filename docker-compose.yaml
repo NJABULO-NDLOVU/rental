@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  rental_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - 127.0.0.1:5022:5022
+    volumes:
+    - .:/app
+    networks:
+    - rental_service
+    - local_rental_service
+    depends_on:
+    - db
+    environment:
+    - DATABASE_URL=postgresql+asyncpg://rental_service:dev@db:5432/rental_service
+
+  db:
+    networks:
+    - local_rental_service
+    image: postgres:13-alpine
+    ports:
+    - 127.0.0.1:5480:5432
+    volumes:
+    - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: rental_service
+      POSTGRES_USER: rental_service
+      POSTGRES_PASSWORD: dev
+
+volumes:
+  postgres: {}
+
+networks:
+  local_rental_service: {}
+  rental_service:
+    name: rental_service
