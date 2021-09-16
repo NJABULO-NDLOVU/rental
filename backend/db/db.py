@@ -27,7 +27,7 @@ Session = orm.sessionmaker(
 )
 
 
-async def session_generator() -> AsyncGenerator[Any, None, None]:
+async def session_generator() -> AsyncGenerator:
     """Provide a transactional scope around a series of operations."""
     session = await Session()
     try:
