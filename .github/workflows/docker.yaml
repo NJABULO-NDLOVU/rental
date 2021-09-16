@@ -1,0 +1,36 @@
+name: Service Docker
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build Docker image
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run hadolint
+      run: |
+        docker run --rm -i hadolint/hadolint < Dockerfile
+
+    - name: Generate image name
+      run: echo "::set-output name=name::nj3000/${GITHUB_REPOSITORY#*/}"
+      id: image_name
+
+    - name: Docker build
+      run: |
+        docker build \
+          --target prod \
+          --tag ${{ steps.image_name.outputs.name }} \
+          "$(pwd)"
+
+    - name: Docker push
+      if: github.ref == 'refs/heads/master'
+      uses: elgohr/Publish-Docker-Github-Action@2.21
+      with:
+        name: ${{ steps.image_name.outputs.name }}
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        buildoptions: '--target prod'
