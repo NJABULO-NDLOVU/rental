@@ -1,5 +1,5 @@
 import uuid
-from typing import cast
+from typing import Any, Generator, cast
 
 from sqlalchemy import orm, select
 from sqlalchemy.dialects import postgresql
@@ -27,7 +27,7 @@ Session = orm.sessionmaker(
 )
 
 
-async def session_generator():
+async def session_generator() -> Generator[Any, None, None]:
     """Provide a transactional scope around a series of operations."""
     session = await Session()
     try:
