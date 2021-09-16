@@ -1,0 +1,47 @@
+name: Python application
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version:
+          - 3.8
+
+    name: Test on Python ${{ matrix.python-version }}
+
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_DB: rental_service
+          POSTGRES_USER: rental_service
+          POSTGRES_PASSWORD: dev
+        ports:
+          - 5480:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - uses: extractions/setup-just@v1
+
+      - name: Install dependencies
+        run: just setup
+
+      - name: Lint
+        run: just lint
+
+      - name: Test
+        run: just test
+
+      - name: Check requirements files are up to date
+        run: |
+          just requirements
+          git diff --exit-code -- requirements.txt
