@@ -25,9 +25,7 @@ async def live_probe() -> Dict[str, str]:
     status_code=status.HTTP_200_OK,
     response_model=Dict[str, Any],
 )
-async def ready(
-    response: Response, session: AsyncSession = Depends(get_session)
-) -> Dict[str, Any]:
+async def ready(response: Response, session: AsyncSession = Depends(get_session)) -> Dict[str, Any]:
     response_data = {"db": "PASS"}
     response_status = "OK"
 

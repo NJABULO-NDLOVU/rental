@@ -1,0 +1,21 @@
+[tool.black]
+line-length = 100
+target-version = ['py38']
+exclude = '''
+(
+  /(
+      \.eggs  # Exclude the defaults plus...
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.nox
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | venv3?  # ...the local venv
+  )/
+)
+'''

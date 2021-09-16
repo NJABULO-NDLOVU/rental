@@ -48,9 +48,7 @@ def auto_migrate(message: str) -> None:
     now = datetime.datetime.now()
     _message = message if message else f"Migration auto-generated at {now}."
     try:
-        alembic.command.revision(
-            config=_get_alembic_config(), message=_message, autogenerate=True
-        )
+        alembic.command.revision(config=_get_alembic_config(), message=_message, autogenerate=True)
     except alembic.util.exc.CommandError as e:
         print(e)
 

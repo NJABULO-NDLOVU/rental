@@ -2,7 +2,6 @@
 # ======================================
 alembic~=1.7
 asyncpg~=0.24
-asyncpgsa~=0.24
 fastapi~=0.68
 grequests~=0.6
 httpx~=0.19
@@ -17,6 +16,7 @@ black
 flake8>=3.9
 isort>=5
 mypy
+types-mock
 
 # test
 faker
