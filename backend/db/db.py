@@ -1,5 +1,5 @@
 import uuid
-from typing import Any, AsyncGenerator, cast
+from typing import AsyncGenerator, cast
 
 from sqlalchemy import orm, select
 from sqlalchemy.dialects import postgresql
