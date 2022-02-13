@@ -7,7 +7,9 @@ from backend.db.models.shopping_list import ShoppingList
 from backend.data_models import response
 
 
-async def create_list(session: AsyncSession, shopping_list: response.ShoppingList) -> response.ShoppingList:
+async def create_list(
+    session: AsyncSession, shopping_list: response.ShoppingList
+) -> response.ShoppingList:
     def _create_item(name: str) -> Item:
         return Item(name=name, uid=uuid4())
 
