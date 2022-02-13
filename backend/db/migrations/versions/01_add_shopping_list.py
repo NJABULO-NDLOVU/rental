@@ -1,8 +1,8 @@
-"""01_add_shopping_list.
+"""Migration auto-generated at 2022-02-13 17:36:55.607001.
 
-Revision ID: 6dc7c5f55dce
+Revision ID: c05835d8ab3f
 Revises: None
-Create Date: 2022-02-12 15:53:00.657029
+Create Date: 2022-02-13 17:36:55.648655
 
 """
 
@@ -11,7 +11,7 @@ from alembic import op
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = "6dc7c5f55dce"
+revision = "c05835d8ab3f"
 down_revision = None
 
 

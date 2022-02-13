@@ -1,8 +1,8 @@
-"""02_add_item.
+"""Migration auto-generated at 2022-02-13 17:37:26.076083.
 
-Revision ID: a25e45696c9c
-Revises: 6dc7c5f55dce
-Create Date: 2022-02-12 16:00:46.526217
+Revision ID: 502a6bfb7d5f
+Revises: c05835d8ab3f
+Create Date: 2022-02-13 17:37:26.445458
 
 """
 
@@ -11,8 +11,8 @@ from alembic import op
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = "a25e45696c9c"
-down_revision = "6dc7c5f55dce"
+revision = "502a6bfb7d5f"
+down_revision = "c05835d8ab3f"
 
 
 def upgrade():
@@ -32,9 +32,9 @@ def schema_upgrades():
         sa.Column("uid", postgresql.UUID(as_uuid=True), nullable=False),
         sa.Column("name", sa.String(), nullable=False),
         sa.Column("is_checked", sa.Boolean(), nullable=True),
-        sa.Column("shopping_list", sa.Integer(), nullable=True),
+        sa.Column("shopping_list_id", sa.Integer(), nullable=True),
         sa.ForeignKeyConstraint(
-            ["shopping_list"],
+            ["shopping_list_id"],
             ["shopping_list.id"],
         ),
         sa.PrimaryKeyConstraint("id"),

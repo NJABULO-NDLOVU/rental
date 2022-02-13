@@ -12,4 +12,6 @@ class ShoppingList(Base):
     uid = Column(UUID(as_uuid=True), nullable=False, unique=True, index=True)
     last_updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
     name = Column(String, nullable=False)
-    items = relationship("Item", backref="shopping_list", cascade="all, delete")
+    items = relationship(
+        "Item", back_populates="shopping_list", cascade="all, delete", lazy="joined"
+    )

@@ -15,4 +15,4 @@ ENV PATH=/venv/bin:$PATH
 
 COPY . /app
 ENV PYTHONPATH /app
-CMD ["uvicorn", "--host=0.0.0.0", "--port=5022", "backend.api.app:app"]
+CMD ["uvicorn", "--host=0.0.0.0", "--port=5022", "--reload", "backend.api.app:app"]
