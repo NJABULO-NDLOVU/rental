@@ -2,9 +2,9 @@ from uuid import uuid4
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from backend.data_models import response
 from backend.db.models.item import Item
 from backend.db.models.shopping_list import ShoppingList
-from backend.data_models import response
 
 
 async def create_list(
