@@ -4,12 +4,7 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.controller.shopping_list import (
-    create_list,
-    delete_list,
-    get_all_lists,
-    get_list,
-)
+from backend.controller.shopping_list import create_list, delete_list, get_all_lists, get_list
 from backend.data_models.response import ShoppingList
 from backend.db.db import get_session
 
@@ -60,5 +55,3 @@ async def get_shopping_list(
 )
 async def delete_shopping_list(uid: UUID, session: AsyncSession = Depends(get_session)) -> None:
     await delete_list(session, uid)
-
-
