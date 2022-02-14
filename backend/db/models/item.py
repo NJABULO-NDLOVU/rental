@@ -12,5 +12,5 @@ class Item(Base):
     uid = Column(UUID(as_uuid=True), nullable=False, unique=True, index=True)
     name = Column(String, nullable=False)
     is_checked = Column(Boolean, default=False)
-    shopping_list_id = Column(Integer, ForeignKey("shopping_list.id"))
+    shopping_list_id = Column(Integer, ForeignKey("shopping_list.id", ondelete="CASCADE"))
     shopping_list = relationship("ShoppingList", back_populates="items")
