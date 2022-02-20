@@ -62,7 +62,9 @@ async def get_shopping_list(
     "/lists/{list_uid}",
     summary="Delete shopping list",
 )
-async def delete_shopping_list(list_uid: UUID, session: AsyncSession = Depends(get_session)) -> None:
+async def delete_shopping_list(
+    list_uid: UUID, session: AsyncSession = Depends(get_session)
+) -> None:
     await delete_list(session, list_uid)
 
 

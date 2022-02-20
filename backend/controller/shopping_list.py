@@ -45,14 +45,18 @@ async def delete_list(session: AsyncSession, list_uid: UUID) -> None:
 
 async def get_list(session: AsyncSession, list_uid: UUID) -> response.ShoppingList:
     stmt = (
-        select(ShoppingList).where(ShoppingList.uid == list_uid).options(joinedload(ShoppingList.items))
+        select(ShoppingList)
+        .where(ShoppingList.uid == list_uid)
+        .options(joinedload(ShoppingList.items))
     )
     results = await session.execute(stmt)
 
     return results.scalars().first()
 
 
-async def add_item(session: AsyncSession, list_uid: UUID, item: response.Item) -> response.ShoppingList:
+async def add_item(
+    session: AsyncSession, list_uid: UUID, item: response.Item
+) -> response.ShoppingList:
     shopping_list = await get_list(session, list_uid)
     shopping_list.items.append(create_item(item.name))
 
