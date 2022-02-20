@@ -4,15 +4,24 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.controller.shopping_list import create_list, delete_list, get_all_lists, get_list
-from backend.data_models.response import ShoppingList
+from backend.controller.shopping_list import (
+    add_item,
+    create_list,
+    delete_item,
+    delete_list,
+    get_all_lists,
+    get_item,
+    get_list,
+    update_item,
+)
+from backend.data_models.response import Item, ShoppingList
 from backend.db.db import get_session
 
 router = APIRouter()
 
 
 @router.post(
-    "/shopping",
+    "/lists",
     summary="Create shopping list",
     response_model=ShoppingList,
 )
@@ -25,7 +34,7 @@ async def create_shopping_list(
 
 
 @router.get(
-    "/shopping/",
+    "/lists/",
     summary="Get all shopping lists",
     response_model=List[ShoppingList],
 )
@@ -36,22 +45,53 @@ async def get_shopping_lists(session: AsyncSession = Depends(get_session)) -> Li
 
 
 @router.get(
-    "/shopping/{uid}",
+    "/lists/{list_uid}",
     summary="Get shopping list",
     status_code=status.HTTP_200_OK,
     response_model=ShoppingList,
 )
 async def get_shopping_list(
-    uid: UUID, session: AsyncSession = Depends(get_session)
+    list_uid: UUID, session: AsyncSession = Depends(get_session)
 ) -> ShoppingList:
-    shop_lists = await get_list(session, uid)
+    shop_lists = await get_list(session, list_uid)
 
     return shop_lists
 
 
 @router.delete(
-    "/shopping/{uid}",
+    "/lists/{list_uid}",
     summary="Delete shopping list",
 )
-async def delete_shopping_list(uid: UUID, session: AsyncSession = Depends(get_session)) -> None:
-    await delete_list(session, uid)
+async def delete_shopping_list(list_uid: UUID, session: AsyncSession = Depends(get_session)) -> None:
+    await delete_list(session, list_uid)
+
+
+@router.post(
+    "/lists/{list_uid}/items",
+    summary="Adding an item to a list.",
+    response_model=ShoppingList,
+)
+async def add_item_to_list(
+    item: Item, list_uid: UUID, session: AsyncSession = Depends(get_session)
+) -> ShoppingList:
+    shop_list = await add_item(session, list_uid, item)
+
+    return shop_list
+
+
+@router.put("/shopping/{uid}/update_item", summary="Adding an item to a list.", response_model=Item)
+async def update_item_in_list(
+    item: Item, uid: UUID, session: AsyncSession = Depends(get_session)
+) -> Item:
+    await update_item(session, uid, item)
+    item = await get_item(session, uid)
+
+    return item
+
+
+@router.delete(
+    "/items/{uid}",
+    summary="Delete shopping list",
+)
+async def delete_item_in_list(uid: UUID, session: AsyncSession = Depends(get_session)) -> None:
+    await delete_item(session, uid)
