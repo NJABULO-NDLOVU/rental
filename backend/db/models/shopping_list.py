@@ -1,4 +1,4 @@
-from sqlalchemy import Column, DateTime, Integer, String, func
+from sqlalchemy import Column, DateTime, ForeignKey, Integer, String, func
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
@@ -13,3 +13,5 @@ class ShoppingList(Base):
     last_updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
     name = Column(String, nullable=False)
     items = relationship("Item", back_populates="shopping_list", cascade="all, delete")
+    creator = relationship("User", back_populates="shopping_lists")
+    user_id = Column("user_id", Integer, ForeignKey("user.id"), nullable=False)
