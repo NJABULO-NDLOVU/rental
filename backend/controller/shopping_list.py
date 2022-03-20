@@ -20,7 +20,7 @@ async def create_list(
 ) -> response.ShoppingList:
     items = [create_item(item.name) for item in shopping_list.items]
 
-    shopping_list = ShoppingList(name=shopping_list.name, items=items, uid=uuid4())
+    shopping_list = ShoppingList(name=shopping_list.name, items=items, uid=uuid4(), user_id=1)
     session.add(shopping_list)
     await session.commit()
 

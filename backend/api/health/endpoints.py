@@ -3,8 +3,10 @@ from typing import Any, Dict
 from fastapi import APIRouter, Depends, Response, status
 from sqlalchemy.exc import OperationalError
 from sqlalchemy.ext.asyncio import AsyncSession
+from backend.data_models.response import User
 
 from backend.db.db import get_session, ping_db
+from backend.api.auth import UserAuth
 
 router = APIRouter()
 
@@ -15,8 +17,8 @@ router = APIRouter()
     status_code=status.HTTP_200_OK,
     response_model=Dict[str, str],
 )
-async def live_probe() -> Dict[str, str]:
-    return {"status": "OK"}
+async def live_probe(user: User = Depends(UserAuth())) -> Dict[str, str]:
+    return {"status": "OK", 'user': user.name}
 
 
 @router.get(
