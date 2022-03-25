@@ -13,6 +13,3 @@ class User(Base):
     uid = Column(UUID(as_uuid=True), nullable=False, unique=True, index=True)
     name = Column(String, nullable=False)
     email = Column(EmailType, nullable=False)
-    contributor_scopes = Column(ARRAY(String))
-    shopping_lists = relationship("ShoppingList", back_populates="creator", cascade="all, delete")
-    password = Column(String, nullable=False)

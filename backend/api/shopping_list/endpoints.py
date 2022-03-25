@@ -1,7 +1,7 @@
 from typing import List
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, status, Header, Request
+from fastapi import APIRouter, Depends, Header, Request, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.controller.shopping_list import (
@@ -29,9 +29,9 @@ router = APIRouter()
 async def create_shopping_list(
     shopping_list: ShoppingList,
     session: AsyncSession = Depends(get_session),
-    #user: User = Header(None),
+    # user: User = Header(None),
 ) -> ShoppingList:
-    #print(user.name)
+    # print(user.name)
     shop_list = await create_list(session, shopping_list)
 
     return shop_list
