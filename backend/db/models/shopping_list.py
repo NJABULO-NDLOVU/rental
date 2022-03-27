@@ -13,5 +13,5 @@ class ShoppingList(Base):
     last_updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
     name = Column(String, nullable=False)
     items = relationship("Item", back_populates="shopping_list", cascade="all, delete")
-    creator = relationship("User", back_populates="shopping_lists")
+    creator = relationship("User")
     user_id = Column("user_id", Integer, ForeignKey("user.id"), nullable=False)

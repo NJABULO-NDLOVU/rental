@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.dialects.postgresql import ARRAY, UUID
-from sqlalchemy.orm import relationship
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy_utils import EmailType
 
 from backend.db.db import Base

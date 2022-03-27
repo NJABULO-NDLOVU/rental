@@ -1,11 +1,12 @@
 from typing import Iterable, Optional
-from xml.dom import NotFoundErr
+from uuid import UUID
+
 from fastapi.exceptions import HTTPException
 from starlette import status
 from starlette.requests import Request
 
-from backend.controller.user import get_user, get_user_permissions
 from backend.controller.shopping_list import get_list
+from backend.controller.user import get_user, get_user_permissions
 from backend.db.db import session_scope
 
 
@@ -13,7 +14,7 @@ class UserAuth:
     def __init__(self, authorizers: Iterable["BaseAuthorizer"] = None) -> None:
         self.authorizers = list(authorizers) if authorizers is not None else []
 
-    async def __call__(self, request: Request):
+    async def __call__(self, request: Request) -> UUID:
         user_uid = request.headers.get("user_uid")
         if user_uid is None:
             raise HTTPException(
@@ -23,7 +24,7 @@ class UserAuth:
         for authorizer in self.authorizers:
             authorized = await authorizer.authorizer(request)
             if not authorized:
-                raise
+                raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Forbidden")
 
         return user_uid
 
@@ -35,7 +36,7 @@ class BaseAuthorizer:
 
 
 class HasListAccess(BaseAuthorizer):
-    def __init__(self, scopes: Optional[Iterable[str]]) -> None:
+    def __init__(self, scopes: Iterable[str]) -> None:
         self._scopes = set(scopes)
 
     async def authorizer(self, request: Request) -> bool:
