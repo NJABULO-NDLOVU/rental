@@ -1,0 +1,14 @@
+<div fxLayoutAlign="center center">
+  <div class="mat-card-home">
+    <mat-card class="text-center center home-content" fxLayoutAlign="center center">
+
+      <div>
+
+        <app-unauthorized *ngIf="!(isAuthenticated())"></app-unauthorized>
+        <app-authorized *ngIf="isAuthenticated()"></app-authorized>
+
+      </div>
+
+    </mat-card>
+  </div>
+</div>
