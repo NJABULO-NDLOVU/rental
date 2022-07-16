@@ -10,6 +10,7 @@ import { PropertyListComponent } from './properties/components/property-list/pro
 import { PropertyViewComponent } from './properties/components/property-view/property-view.component';
 import { TenantListComponent } from './tenants/components/tenant-list/tenant-list.component';
 import { TenantViewComponent } from './tenants/components/tenant-view/tenant-view.component';
+import { DashboardComponentComponent } from './dashboard/components/dashboard-component/dashboard-component.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TenantViewComponent } from './tenants/components/tenant-view/tenant-vie
     PropertyListComponent,
     PropertyViewComponent,
     TenantListComponent,
-    TenantViewComponent
+    TenantViewComponent,
+    DashboardComponentComponent
   ],
   imports: [
     BrowserModule,
