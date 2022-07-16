@@ -11,6 +11,7 @@ import { PropertyViewComponent } from './properties/components/property-view/pro
 import { TenantListComponent } from './tenants/components/tenant-list/tenant-list.component';
 import { TenantViewComponent } from './tenants/components/tenant-view/tenant-view.component';
 import { DashboardComponentComponent } from './dashboard/components/dashboard-component/dashboard-component.component';
+import { PropertyDetailsComponent } from './properties/components/property-view/property-details/property-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashboardComponentComponent } from './dashboard/components/dashboard-co
     PropertyViewComponent,
     TenantListComponent,
     TenantViewComponent,
-    DashboardComponentComponent
+    DashboardComponentComponent,
+    PropertyDetailsComponent
   ],
   imports: [
     BrowserModule,
