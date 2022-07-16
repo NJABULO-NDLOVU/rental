@@ -43,7 +43,7 @@ class HasListAccess(BaseAuthorizer):
         shopping_list_uid = request.path_params.get("list_uid")
         user_uid = request.headers.get("user_uid")
         async with session_scope() as session:
-            shopping_list = await get_list(session, shopping_list_uid)
+            shopping_list = await get_list(session, shopping_list_uid) 
             if shopping_list is None:
                 pass
             user = await get_user(session, user_uid)
