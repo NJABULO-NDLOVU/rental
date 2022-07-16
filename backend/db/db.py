@@ -1,4 +1,5 @@
 import uuid
+from contextlib import asynccontextmanager
 from typing import AsyncGenerator, cast
 
 from sqlalchemy import orm, select
@@ -29,20 +30,23 @@ Session = orm.sessionmaker(
 
 async def session_generator() -> AsyncGenerator:
     """Provide a transactional scope around a series of operations."""
-    session = await Session()
+    session = Session()
     try:
         yield session
-        session.commit()
+        await session.commit()
     except:  # noqaE722
-        session.rollback()
+        await session.rollback()
         raise
     finally:
-        session.close()
+        await session.close()
 
 
 async def get_session() -> AsyncSession:
     async with Session() as session:
         yield session
+
+
+session_scope = asynccontextmanager(session_generator)
 
 
 async def ping_db(session: AsyncSession) -> None:

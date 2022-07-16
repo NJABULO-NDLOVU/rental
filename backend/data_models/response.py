@@ -17,3 +17,10 @@ class ShoppingList(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+class User(BaseModel):
+    name: str
+
+    class Config:
+        orm_mode = True

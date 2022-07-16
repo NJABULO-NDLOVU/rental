@@ -26,8 +26,11 @@ router = APIRouter()
     response_model=ShoppingList,
 )
 async def create_shopping_list(
-    shopping_list: ShoppingList, session: AsyncSession = Depends(get_session)
+    shopping_list: ShoppingList,
+    session: AsyncSession = Depends(get_session),
+    # user: User = Header(None),
 ) -> ShoppingList:
+    # print(user.name)
     shop_list = await create_list(session, shopping_list)
 
     return shop_list
