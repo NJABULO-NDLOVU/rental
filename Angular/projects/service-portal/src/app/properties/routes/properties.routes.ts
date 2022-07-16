@@ -1,9 +1,14 @@
 import { Routes } from "@angular/router";
-import { PropertyListComponent } from "../components/property-list/property-list.component";
-import { DashboardComponent } from "../dashboard.component";
+
+import { PropertyListRoutes } from "../components/property-list/property-list.routes";
+
 
 
 export const PropertiesRoutes: Routes = [
 
+    {
+        path: '',
+        children:  PropertyListRoutes
 
+    }
 ]
