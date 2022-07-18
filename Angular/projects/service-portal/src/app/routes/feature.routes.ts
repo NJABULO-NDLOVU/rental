@@ -1,4 +1,4 @@
-import { Route } from "@angular/router";
+import { Routes } from "@angular/router";
 
 import { DashboardComponent } from "../dashboard/dashboard.component";
 
@@ -8,3 +8,16 @@ import { PropertyListComponent } from "../properties/components/property-list/pr
 
 import { DashboardRoutes } from "../dashboard/routes/dashboard.routes";
 
+import { PropertiesComponent } from "../properties/properties.component";
+
+import { TenantsComponent } from "../tenants/tenants.component";
+
+export const FeatureRoutes: Routes = [
+
+        {path: 'dashboard', component: DashboardComponent},
+
+        {path: 'properties', component: PropertiesComponent},
+
+        {path: 'tenant', component:TenantsComponent}
+
+]
