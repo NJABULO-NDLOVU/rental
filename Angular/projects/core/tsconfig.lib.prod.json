@@ -6,5 +6,7 @@
   },
   "angularCompilerOptions": {
     "compilationMode": "partial"
-  }
+  },
+  "strictPropertyInitialization": false
+
 }
