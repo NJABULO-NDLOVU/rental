@@ -22,8 +22,6 @@ import { TenantViewComponent } from './tenants/components/tenant-view/tenant-vie
 
 import { PropertyDetailsComponent } from './properties/components/property-view/property-details/property-details.component';
 
-import { SidenavComponent } from 'projects/core/src/lib/components/sidenav/sidenav.component';
-
 import { AppRoutes } from './app.routes';
 
 
@@ -40,7 +38,6 @@ import { AppRoutes } from './app.routes';
     TenantListComponent,
     TenantViewComponent,
     PropertyDetailsComponent,
-    SidenavComponent
   ],
   imports: [
     BrowserModule,
