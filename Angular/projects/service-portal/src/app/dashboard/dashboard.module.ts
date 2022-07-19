@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 
 import { CommonModule } from "@angular/common";
 
+import { MaterialModule } from "projects/core/src/lib/modules/material.module";
+
 import * as components from './components/index';
 
 
@@ -15,7 +17,12 @@ import * as components from './components/index';
     imports: [
 
         CommonModule,
+        MaterialModule
 
+    ],
+
+    exports: [
+        ...components.DashboardComponents,
     ]
 })
 

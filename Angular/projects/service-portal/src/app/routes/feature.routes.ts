@@ -18,6 +18,6 @@ export const FeatureRoutes: Routes = [
 
         {path: 'properties', component: PropertiesComponent},
 
-        {path: 'tenant', component:TenantsComponent}
+        {path: 'tenants', component:TenantsComponent}
 
 ]

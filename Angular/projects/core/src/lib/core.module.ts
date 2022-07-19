@@ -16,7 +16,7 @@ import { FlexModule } from './modules/flex.module';
 @NgModule({
   declarations: [
 
-    CoreComponent
+    CoreComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +29,7 @@ import { FlexModule } from './modules/flex.module';
 
   ],
   exports: [
-    
+
     CoreComponent
   ]
 })

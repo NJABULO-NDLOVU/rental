@@ -6,7 +6,7 @@ import { RouterModule } from "@angular/router";
 
 import { FeatureRoutes } from "./feature.routes";
 
-NgModule({
+@NgModule({
 
     declarations: [
 
