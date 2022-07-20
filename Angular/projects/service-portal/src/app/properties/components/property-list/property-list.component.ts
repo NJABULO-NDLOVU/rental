@@ -10,6 +10,7 @@ export class PropertyListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('Prop list')
   }
 
 }

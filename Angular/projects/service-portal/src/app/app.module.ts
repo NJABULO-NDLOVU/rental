@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { AppRoutes } from './app.routes';
+import { AppRoutes } from './app-routing.module';
 
 import { SideNavModule } from 'projects/core/src/lib/components/side-nav/side-nav.module';
 

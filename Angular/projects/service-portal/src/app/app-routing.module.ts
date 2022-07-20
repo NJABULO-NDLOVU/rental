@@ -23,24 +23,18 @@ export const AppRoutes: Routes = [
   },
 
   {
-    path: 'properties',
-
-    loadChildren: () => import('./properties/properties.module').then(module => module.PropertiesModule)
-  },
-
-  {
     path: 'tenants',
 
     loadChildren: () => import('./tenants/tenants.module').then(module => module.TenantsModule)
   },
 
-  {
-    path: '**',
+//   {
+//     path: '**',
 
-    pathMatch: 'full',
+//     pathMatch: 'full',
 
-    redirectTo: '/dashboard'
-},
+//     redirectTo: '/dashboard'
+// },
 
 
 

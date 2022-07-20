@@ -11,13 +11,18 @@ import { DashboardRoutes } from "../dashboard/routes/dashboard.routes";
 import { PropertiesComponent } from "../properties/properties.component";
 
 import { TenantsComponent } from "../tenants/tenants.component";
+import { PropertiesRoutes } from "../properties/routes/properties.routes";
 
 export const FeatureRoutes: Routes = [
 
-        {path: 'dashboard', component: DashboardComponent},
+        {path: 'dashboard',
+        component: DashboardComponent},
 
-        {path: 'properties', component: PropertiesComponent},
+        {path: 'properties', 
+        component: PropertiesComponent,
+        children: PropertiesRoutes},
 
-        {path: 'tenants', component:TenantsComponent}
+        {path: 'tenants',
+        component:TenantsComponent}
 
 ]

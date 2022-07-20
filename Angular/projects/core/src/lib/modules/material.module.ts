@@ -6,6 +6,7 @@ import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule} from '@angular/material/divider';
 import { MatCardModule} from '@angular/material/card'
 import { MatIconModule} from '@angular/material/icon'
+import { MatMenuModule} from '@angular/material/menu'
 
 @NgModule({
   imports: [
@@ -15,7 +16,9 @@ import { MatIconModule} from '@angular/material/icon'
     MatSidenavModule,
     MatDividerModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
+    
   ],
   exports: [
     CommonModule,
@@ -24,7 +27,8 @@ import { MatIconModule} from '@angular/material/icon'
     MatSidenavModule,
     MatDividerModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
 })
 export class MaterialModule { }
