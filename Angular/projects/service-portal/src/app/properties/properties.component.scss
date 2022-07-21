@@ -49,9 +49,13 @@
 
 .mat-card-home {
     height: calc(100vh - 140px);
+    // max-width: calc(100vw - 70px) !important;
     box-sizing: border-box;
     align-items: stretch;
     display: flex;
+    padding-top: 35px;
+    padding-left: 35px;
+    padding-right: 35px;
 
 }
 

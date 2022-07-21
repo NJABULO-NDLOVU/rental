@@ -83,26 +83,26 @@
                 style="font-size: 14px;">
 
                     <a class="navlink" routerLink=''
-                    *ngIf="(!whichIsActiveRoute('/'))"
+                    *ngIf="(!whichIsActiveRoute('/dashboard'))"
                     >
-                      Home
+                      Dashboard
                     </a>
 
                     <a class="currentLink" routerLink=''
-                    *ngIf="(whichIsActiveRoute('/'))" >
-                      Home
+                    *ngIf="(whichIsActiveRoute('/dashboard'))" >
+                    Dashboard
                     </a>
 
-                    <a class="navlink" routerLink='/user_info'
+                    <a class="navlink" routerLink='/properties'
                     *ngIf="(isAuthenticated() && !whichIsActiveRoute('/user_info'))" 
                         style="padding-right: 20px;">
-                      My Profile
+                      Properties
                     </a>
 
-                    <a class="currentLink" routerLink='/user_info'
+                    <a class="currentLink" routerLink='/properties'
                     *ngIf="(isAuthenticated() && whichIsActiveRoute('/user_info'))" 
                     style="padding-right: 20px;">
-                      My Profile
+                    Properties
                     </a>
 
 

@@ -11,12 +11,14 @@ import { FontAModule } from './modules/font-awesome.module';
 import { MaterialModule } from './modules/material.module';
 
 import { FlexModule } from './modules/flex.module';
+import { TableComponent } from './components/table/table.component';
 
 
 @NgModule({
   declarations: [
 
     CoreComponent,
+     TableComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { FlexModule } from './modules/flex.module';
   ],
   exports: [
 
-    CoreComponent
+    CoreComponent,
+     TableComponent
   ]
 })
 export class CoreModule { }

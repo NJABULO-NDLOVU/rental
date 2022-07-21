@@ -1,16 +1,15 @@
 
+<div fxLayout="column" fxLayoutAlign="space-between stretch" class="mat-card-home" >
 
-<div fxLayoutAlign="center center">
-    <div class="mat-card-home">
-      <mat-card class="text-center center home-content" fxLayoutAlign="center center" >
-  
-        <div>
+    <mat-card >
+
+      <div [ngStyle]="{ padding: '25px' }" fxLayout="column" fxLayoutGap="30px" >
             
             <router-outlet></router-outlet>
   
         </div>
+
+    </mat-card>
   
-      </mat-card>
-    </div>
   </div>
   

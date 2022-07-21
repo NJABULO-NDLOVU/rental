@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import TableTopContent from 'projects/core/src/lib/components/table/models/custom/TabletopContent';
 
 @Component({
   selector: 'app-properties',
@@ -7,9 +6,6 @@ import TableTopContent from 'projects/core/src/lib/components/table/models/custo
   styleUrls: ['./properties.component.scss']
 })
 export class PropertiesComponent implements OnInit {
-
-  tableTopContent!: TableTopContent[]
-
 
   constructor() { }
 

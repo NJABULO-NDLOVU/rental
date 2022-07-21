@@ -13,6 +13,7 @@ import { SideNavModule } from 'projects/core/src/lib/components/side-nav/side-na
 import { MaterialModule } from 'projects/core/src/lib/modules/material.module';
 
 import { FeatureModule } from './routes/feature.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -27,6 +28,8 @@ import { FeatureModule } from './routes/feature.module';
     MaterialModule,
 
     FeatureModule,
+
+    HttpClientModule,
 
     RouterModule.forRoot(AppRoutes)
   ],

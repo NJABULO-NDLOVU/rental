@@ -2,13 +2,13 @@ import { Routes } from "@angular/router";
 
 export const AppRoutes: Routes = [
 
-  // {
-  //   path: '',
+  {
+    path: '',
     
-  //   pathMatch: 'full',
+    pathMatch: 'full',
 
-  //   redirectTo: "/dashboard"
-  // },
+    redirectTo: "/dashboard"
+  },
 
   {
     path: 'dashboard',
@@ -28,13 +28,13 @@ export const AppRoutes: Routes = [
     loadChildren: () => import('./tenants/tenants.module').then(module => module.TenantsModule)
   },
 
-//   {
-//     path: '**',
+  {
+    path: '**',
 
-//     pathMatch: 'full',
+    pathMatch: 'full',
 
-//     redirectTo: '/dashboard'
-// },
+    redirectTo: '/dashboard'
+},
 
 
 
