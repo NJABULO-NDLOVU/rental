@@ -7,5 +7,9 @@ import { Component } from "@angular/core";
 })
 export class PropertyListComponent {
 
+datasource: any;
+
+Columns: String[] = ['one', 'two', 'three']
+
 
 }

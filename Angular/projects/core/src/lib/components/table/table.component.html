@@ -1,49 +1,34 @@
-<p>table works!</p>
-<mat-table mat-table [dataSource]="datasource">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
   
-    <!-- Firstname -->
-    <ng-container matColumnDef="firstname">
-      <mat-header-cell *matHeaderCellDef>
-        <span>Firstname</span>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let user">
-        <!-- <span>{{user.firstname}}</span> -->
-      </mat-cell>
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
     </ng-container>
   
-    <!-- Lastname -->
-    <ng-container matColumnDef="lastname">
-      <mat-header-cell *matHeaderCellDef>
-        <span>Lastname</span>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let user">
-        <span>{{user.lastname}}</span>
-      </mat-cell>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
   
-    <!-- Mail -->
-    <ng-container matColumnDef="mail">
-      <mat-header-cell *matHeaderCellDef>
-        <span>Mail</span>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let user">
-        <a [href]="'mailto:' + user.mail">
-          <span>{{user.mail}}</span>
-        </a>
-      </mat-cell>
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
     </ng-container>
   
-    <!-- JOB -->
-    <ng-container matColumnDef="job">
-      <mat-header-cell *matHeaderCellDef>
-        <span>Job</span>
-      </mat-header-cell>
-      <mat-cell *matCellDef="let user">
-        <span class="job">{{user.job}}</span>
-      </mat-cell>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
     </ng-container>
   
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+  </table>
   
-    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columns;"></mat-row>
-  </mat-table>
+  
