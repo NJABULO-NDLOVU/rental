@@ -1,1 +1,172 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+  }
+  
+  code {
+    color: #e01a76;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto;
+  }
+  
+  
+  
+  @media only screen and (min-width: 960px) {
+  
+    /* gt.md */
+  
+  }
+  
+  @media only screen and (max-width: 974px) {
+  
+    /* lt.md */
+  
+    .footer {
+      font-size: 12px;
+      padding-left: 33.44px;
+      padding-right: 33.44px;
+      padding-top: 19px;
+      padding-bottom: 19px;
+      margin-bottom: 0px
+    }
+  
+  }
+  
+  @media only screen and (max-width: 599px) {
+  
+    /* lt.sm */
+  
+  }
+  
+  a:active {
+    color: #007AD2;
+    font-weight: 600;
+    font-size: 14px;
+  
+  }
+  
+  .currentLink {
+    color: #007AD2;
+    font-weight: 550;
+    font-size: 14px;
+    padding-right: 20px;
+  
+  }
+  
+  .currentLink:hover {
+    color: #007AD2;
+    font-weight: 550;
+    font-size: 14px;
+    padding-right: 20px;
+    text-decoration: none;
+  }
+  
+  .navlink {
+    color: #404140;
+    font-weight: 400;
+    font-size: 14px;
+    padding-right: 20px;
+  
+  }
+  
+  .navlink:hover {
+    color: #007AD2;
+    font-weight: 400;
+    font-size: 14px;
+    padding-right: 20px;
+    text-decoration: none;
+  
+  }
+  
+  .sidenavlinks {
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0px;
+    color: #404140;
+  }
+  
+  .sidenavlinks-current{
+    color: #007AD2;
+    font-weight: 550;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    padding: 0px;
+  }
+  
+  .btn-login {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    width: 100px;
+    height: 33px;
+    padding-top: 4px;
+    font-size: 14px;
+  }
+  
+  .btn-login:hover {
+    color: #CEEAFF;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    width: 100px;
+    height: 33px;
+    padding-top: 4px;
+    font-size: 14px;
+  }
+  
+  .toolbar {
+    height: 60px !important;
+    color: white;
+    position: sticky;
+    position: -webkit-sticky;
+    /* For macOS/iOS Safari */
+    top: 0;
+    /* Sets the sticky toolbar to be on top */
+    z-index: 1000;
+  }
+  
+  
+  
+  .mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .toolbar {
+    box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .content {
+    margin-bottom: 0px !important;
+  }
+  
+  
+  
+  .footer {
+    line-height: 14px;
+    background: linear-gradient(360deg, #F8F8F8 0%, #FFFFFF 100%, #FFFFFF 100%) !important;
+    color: #929292 !important;
+    box-shadow: none !important;
+    min-height: 80px;
+    font-size: 12px;
+    text-align: center;
+  }

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-property-list',
   templateUrl: './property-list.component.html',
   styleUrls: ['./property-list.component.scss']
 })
-export class PropertyListComponent implements OnInit {
 
-  constructor() { }
+export class PropertyListComponent {
 
-  ngOnInit(): void {
-  }
+datasource: any;
+
+Columns: String[] = ['one', 'two', 'three']
 
 }

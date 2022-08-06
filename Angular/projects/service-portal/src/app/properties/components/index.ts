@@ -6,7 +6,7 @@ export const propertiesComponents: any = [
 
     PropertiesComponent,
     
-    PropertyListComponent
+    // PropertyListComponent
 ];
 
 export * from "../properties.component";

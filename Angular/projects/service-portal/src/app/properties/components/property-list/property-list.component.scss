@@ -1,0 +1,99 @@
+.table-container {
+
+    padding: 25px;
+    
+  }
+  
+  .filter {
+  
+    border: 1px solid lightgrey;
+  
+    border-radius: 5px;
+  
+  }
+  
+  ::ng-deep .panel-class {
+  
+    mat-dialog-container {
+  
+      height: auto;
+  
+      min-height: 400px;
+  
+      min-width: 640px;
+  
+    }
+  
+  }
+  
+  fa-icon {
+  
+    font-size: 12px;
+  
+    color: #FFFFFF;
+  
+    padding-right: 10px;
+  
+  }
+  
+  .apps-button {
+  
+    font-size: 30px;
+  
+    width: 30px;
+  
+    height: 35px;
+  
+    padding-top: 35px;
+  
+    font-weight: 700;
+  
+  }
+  
+  .mat-column-displayName {
+  
+    min-width: 230px;
+  
+  }
+  
+  .table-manipulation {
+  
+    height: calc(100vh - 370px);
+  
+  }
+  
+  .add-new-button {
+  
+    background: #F46523;
+  
+    border-radius: 50px;
+  
+    color: #FFFFFF;
+  
+    border: none;
+  
+    width: 120px;
+  
+    height: 40px;
+  
+    box-shadow: none;
+  
+    align-content: center;
+  
+  }
+  
+  ::ng-deep .mat-fab .mat-button-wrapper {
+  
+    padding: 0px;
+  
+  }
+  
+  
+  .mat-divider.mat-divider-vertical {
+  
+    border-right-width: 0.5px;
+  
+    color: #949699 !important;
+  
+  }
+  
