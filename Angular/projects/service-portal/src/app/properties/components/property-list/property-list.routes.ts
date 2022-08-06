@@ -9,7 +9,6 @@ export const PropertyListRoutes: Routes = [
         path: '',
 
         component: PropertyListComponent
-
     },
 
     {

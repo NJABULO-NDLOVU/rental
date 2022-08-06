@@ -5,11 +5,11 @@ import { Component } from "@angular/core";
   templateUrl: './property-list.component.html',
   styleUrls: ['./property-list.component.scss']
 })
+
 export class PropertyListComponent {
 
 datasource: any;
 
 Columns: String[] = ['one', 'two', 'three']
-
 
 }

@@ -15,7 +15,6 @@ import { PropertiesComponent } from "./components/index";
 import { PropertyListModule } from "./components/property-list/property-list.module";
 
 import { TableModule } from "projects/core/src/lib/components/table/table.module";
-
 @NgModule({
 
     declarations:[
@@ -29,7 +28,6 @@ import { TableModule } from "projects/core/src/lib/components/table/table.module
         CommonModule,
 
         RouterModule,
-
         MaterialModule,
 
         FlexModule,
