@@ -1,0 +1,23 @@
+{
+    "data": [
+        {
+            "propetyName": "big house",
+            "shortAddress": "123 big street",
+            "isVacant": true,
+            "isDeleted": false,
+            "id": 1,
+            "uniqueId": "fb07cb0f-f057-41f2-a657-c9e130af2ed8",
+            "propertyType": "Free standing"
+        },
+
+        {
+            "propetyName": "small apartment",
+            "shortAddress": "445 small street",
+            "isVacant": true,
+            "isDeleted": false,
+            "id": 1,
+            "uniqueId": "aw42cb0f-ff54-41f2-a657-c9e121mn2ed8",
+            "propertyType": "Apartment"
+        }
+    ]
+}
