@@ -12,13 +12,13 @@ import { MaterialModule } from './modules/material.module';
 
 import { FlexModule } from './modules/flex.module';
 import { TableComponent } from './components/table/table.component';
+import { TableModule } from './components/table/table.module';
 
 
 @NgModule({
   declarations: [
 
     CoreComponent,
-     TableComponent,
   ],
   imports: [
     CommonModule,
@@ -33,7 +33,6 @@ import { TableComponent } from './components/table/table.component';
   exports: [
 
     CoreComponent,
-     TableComponent
   ]
 })
 export class CoreModule { }

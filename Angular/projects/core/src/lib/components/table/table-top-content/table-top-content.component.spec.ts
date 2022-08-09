@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableComponent } from './table.component';
+import { TableTopContentComponent } from './table-top-content.component';
 
-describe('TableComponent', () => {
-  let component: TableComponent;
-  let fixture: ComponentFixture<TableComponent>;
+describe('TableTopContentComponent', () => {
+  let component: TableTopContentComponent;
+  let fixture: ComponentFixture<TableTopContentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [TableComponent],
+    declarations: [TableTopContentComponent],
     teardown: { destroyAfterEach: false }
 })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableComponent);
+    fixture = TestBed.createComponent(TableTopContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

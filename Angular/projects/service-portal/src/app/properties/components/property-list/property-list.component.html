@@ -1,14 +1,30 @@
+<div fxLayout="column" class="card">
 
-        <!-- <div fxLayout="column" fxLayoutAlign="space-between start" style="width: 100%; background-color: yellow;"> -->
-      
-          <!-- <rental-table-top-content [tableTopContent]="tableTopContent"></rental-table-top-content> -->
-      
-          <!-- <piriba-filter-control [ngStyle]="{ padding: '0 18px 0 0' }" holder="Search Tenants"
-            (newSearchEvent)="filter($event)"></piriba-filter-control> -->
-      
-        <!-- </div> -->
-      
-        <div class="section">
-          <p>Table without the firstname and with the job as first column</p>
-          <lib-table [dataSource]="dataSource" [columns]="columns"></lib-table>
-        </div>
+  <mat-card class="shadow">
+
+    <div [ngStyle]="{ padding: '25px' }" fxLayout="column" fxLayoutGap="30px" class="mat-elevation-z0">
+
+
+      <div fxLayout="row" fxLayoutAlign="space-between start" style="width: 100%;">
+
+        <lib-table-top-content [tableTopContent]="tableTopContent"></lib-table-top-content>
+
+        <piriba-filter-control [ngStyle]="{ padding: '0 18px 0 0' }" holder="Search Tenants"
+          (newSearchEvent)="filter($event)"></piriba-filter-control>
+
+      </div>
+
+      <div class="table-manipulation">
+
+        <lib-table (nextPageEvent)="getNextPage($event)" (rowClick)="navigateToProperty($event)"
+          [tableData]="datasource" [loading]="loading" [columns]="columns" [endpoint]="endpoint"
+          [navigation]="navigation" [showViewAction]="view" [sortBy]="sortBy" [rowClickable]="true">
+        </lib-table>
+
+      </div>
+
+    </div>
+
+  </mat-card>
+
+</div>
