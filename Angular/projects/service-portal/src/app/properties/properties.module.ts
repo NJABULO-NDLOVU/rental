@@ -15,12 +15,14 @@ import { PropertiesComponent } from "./components/index";
 import { PropertyListModule } from "./components/property-list/property-list.module";
 
 import { TableModule } from "projects/core/src/lib/components/table/table.module";
+import { PropertyCreationComponent } from './components/property-creation/property-creation.component';
 @NgModule({
 
     declarations:[
 
         // ...components.propertiesComponents
-        PropertiesComponent
+        PropertiesComponent,
+         PropertyCreationComponent
     ],
 
     imports: [

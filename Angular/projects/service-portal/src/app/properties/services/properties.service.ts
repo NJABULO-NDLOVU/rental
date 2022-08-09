@@ -8,7 +8,7 @@ import { CoreService } from 'projects/core/src/public-api';
 
 import ListResponse from 'projects/core/src/lib/models/common/ListResponse';
 
-import PropertyInfo from './models/propertyInfo';
+import PropertyInfo from '../models/propertyInfo';
 
 // import { environment } from 'projects/management-portal/src/environments/environment.prod';
 
@@ -26,18 +26,13 @@ export class PropertiesService extends CoreService {
   url: string;
 
 
-  constructor(private httpClient: HttpClient, ) {
+  constructor(private httpClient: HttpClient, @Inject('BASE_URL') baseUrl: any ) {
 
     super();
-    this.url = 'localhost:4200';
+    this.url = baseUrl;
 
   }
 
-//   splitUrl(baseUrl:string){
-
-//     return baseUrl.split('//')[0] +  "//"+ environment.ServiceManagerApiUrl + baseUrl.split('//')[1]
-    
-//   }
 
   getPropertyListData<T>(
     offset: string,
@@ -61,17 +56,8 @@ export class PropertiesService extends CoreService {
   }
 
   getPropertyListDataLocal (): Observable<ListResponse<PropertyInfo> | null> {
-    let testProperty : PropertyInfo | any = {
-      propetyName: "big house",
-      shortAddress: "123 big street",
-      isVacant: true,
-      isDeleted: false,
-      id: 1,
-      uniqueId: "fb07cb0f-f057-41f2-a657-c9e130af2ed8",
-      propertyType: "Free standing"
-    
-    }
-    return of(testProperty)    
+
+    return this.httpClient.get<ListResponse<PropertyInfo>>('../../assets/data/propertyData.json')   
   }
 
   getProperty(tenantId: any): Observable<ListResponse<PropertyInfo> | null> {
