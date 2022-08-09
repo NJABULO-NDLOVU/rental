@@ -1,9 +1,9 @@
-import { FormGroup } from "@angular/forms";
+import { UntypedFormGroup } from "@angular/forms";
 import CardContent from "./CardContent";
 
 export default class ModalFormItem {
 
-    InputFormGroup: FormGroup
+    InputFormGroup: UntypedFormGroup
 
     FormObjects: Array<any>;
 
@@ -15,7 +15,7 @@ export default class ModalFormItem {
 
         this.FormObjects = [];
 
-        this.InputFormGroup = new FormGroup({});
+        this.InputFormGroup = new UntypedFormGroup({});
 
         this.CustomItems = [];
 
