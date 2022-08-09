@@ -10,12 +10,20 @@ import { FontAModule } from "../../modules/font-awesome.module";
 
 import { RouterModule } from "@angular/router";
 
-import * as components from '../index';
+import { TableTopContentComponent } from './table-top-content/table-top-content.component';
+
+import { TableComponent } from "./table.component";
+import { ColumnTextWidthPipe } from "../../pipes/column-text-width.pipe";
 
 @NgModule({
 
     declarations: [
-        ...components.TableComponents
+        TableComponent,
+
+        TableTopContentComponent,
+
+        ColumnTextWidthPipe,
+
     ],
     
     imports: [
@@ -33,7 +41,9 @@ import * as components from '../index';
 
     exports: [
 
-        ...components.TableComponents
+        TableComponent,
+        
+        TableTopContentComponent
 
     ]
 })
