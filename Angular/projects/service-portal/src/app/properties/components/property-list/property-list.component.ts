@@ -2,14 +2,14 @@ import { Component } from "@angular/core";
 import { MatDialog, MatDialogConfig } from "@angular/material/dialog"
 import { PropertyCreationComponent } from "../property-creation/property-creation.component";
 @Component({
-  selector: 'app-property-list',
+  selector: 'rental-property-list',
   templateUrl: './property-list.component.html',
   styleUrls: ['./property-list.component.scss']
 })
 
 export class PropertyListComponent {
 
-datasource: any;
+dataSource: any;
 
 Columns: String[] = ['one', 'two', 'three']
 

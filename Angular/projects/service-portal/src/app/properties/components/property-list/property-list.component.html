@@ -1,7 +1,7 @@
 
         <!-- <div fxLayout="column" fxLayoutAlign="space-between start" style="width: 100%; background-color: yellow;"> -->
       
-          <!-- <app-table-top-content [tableTopContent]="tableTopContent"></app-table-top-content> -->
+          <!-- <rental-table-top-content [tableTopContent]="tableTopContent"></rental-table-top-content> -->
       
           <!-- <piriba-filter-control [ngStyle]="{ padding: '0 18px 0 0' }" holder="Search Tenants"
             (newSearchEvent)="filter($event)"></piriba-filter-control> -->
@@ -10,5 +10,5 @@
       
         <div class="section">
           <p>Table without the firstname and with the job as first column</p>
-          <lib-table [dataSource]="datasource" [columns]="columns"></lib-table>
+          <lib-table [dataSource]="dataSource" [columns]="columns"></lib-table>
         </div>

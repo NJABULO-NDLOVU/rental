@@ -13,7 +13,7 @@ import * as components from './components/index';
 
     declarations:[
 
-        ...components.DashboardComponents
+        ...components.DashboardComponents,
     ],
 
     imports: [
