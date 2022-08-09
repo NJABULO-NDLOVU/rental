@@ -15,7 +15,7 @@
       },
       "root": "projects/admin-portal",
       "sourceRoot": "projects/admin-portal/src",
-      "prefix": "app",
+      "prefix": "rental",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -120,7 +120,7 @@
       },
       "root": "projects/service-portal",
       "sourceRoot": "projects/service-portal/src",
-      "prefix": "app",
+      "prefix": "rental",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -223,7 +223,7 @@
       },
       "root": "projects/user-portal",
       "sourceRoot": "projects/user-portal/src",
-      "prefix": "app",
+      "prefix": "rental",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

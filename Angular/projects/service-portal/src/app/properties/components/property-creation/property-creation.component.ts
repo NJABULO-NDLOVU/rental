@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-property-creation',
+  selector: 'rental-property-creation',
   templateUrl: './property-creation.component.html',
   styleUrls: ['./property-creation.component.scss']
 })
