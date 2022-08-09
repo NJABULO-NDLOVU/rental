@@ -31,25 +31,25 @@ export class TableComponent implements OnInit {
 
   @Input() datasource = new MatTableDataSource<any>();
 
-  @Input() sliderData!: SliderData;
+  @Input() sliderData: SliderData;
 
-  @Input() columns!: Column<any>[];
+  @Input() columns: Column<any>[];
 
-  @Input() endpoint!: string;
+  @Input() endpoint: string;
 
-  @Input() buttonData!: ButtonData;
+  @Input() buttonData: ButtonData;
 
-  @Input() navigation!: string;
+  @Input() navigation: string;
 
-  @Input() showViewAction!: boolean;
+  @Input() showViewAction: boolean;
 
-  @Input() showDeleteAction!: boolean;
+  @Input() showDeleteAction: boolean;
 
-  @Input() sortBy!: string;
+  @Input() sortBy: string;
 
-  @Input() tableData!: Observable<TableDataPage>;
+  @Input() tableData: Observable<TableDataPage>;
 
-  @Input() loading!: Observable<boolean>;
+  @Input() loading: Observable<boolean>;
 
   @Input() rowClickable!: boolean;
 
