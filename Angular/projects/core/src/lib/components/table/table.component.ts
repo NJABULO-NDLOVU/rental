@@ -24,7 +24,7 @@ import TableDataPage from './models/custom/TablePageData';
 
 @Component({
   selector: 'lib-table',
-  styleUrls: ['table.component.css'],
+  styleUrls: ['table.component.scss'],
   templateUrl: 'table.component.html',
 })
 export class TableComponent implements OnInit {
