@@ -1,1 +1,10 @@
-<p>table-top-content works!</p>
+<div *ngFor="let data of tableTopContent" fxLayoutGap="20px" fxLayout="row" style="padding-top: 5px;" fxLayoutAlign="center center">
+
+    <div>
+      <fa-icon [icon]="['fas', data.iconName]"></fa-icon>
+    </div>
+  
+    <span class="heading"> {{ data.label }} </span>
+  
+  </div>
+  

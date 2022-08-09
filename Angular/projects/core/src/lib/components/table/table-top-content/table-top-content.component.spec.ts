@@ -8,8 +8,9 @@ describe('TableTopContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TableTopContentComponent ]
-    })
+    declarations: [TableTopContentComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 
