@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TenantsModule } from './tenants/tenants.module';
 import { PropertiesModule } from './properties/properties.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -50,7 +51,15 @@ import { DashboardModule } from './dashboard/dashboard.module';
 
     RouterModule.forRoot(AppRoutes)
   ],
-  providers: [],
+  providers: [
+
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false} },
+
+    { provide: MatDialogRef, useValue: {}},
+
+    { provide: MatDialog, useValue: {}}
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

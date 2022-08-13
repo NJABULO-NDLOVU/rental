@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Inject, Injectable } from '@angular/core';
 
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { CoreService } from 'projects/core/src/public-api';
 
@@ -26,10 +26,10 @@ export class PropertiesService extends CoreService {
   url: string;
 
 
-  constructor(private httpClient: HttpClient, @Inject('BASE_URL') baseUrl: any ) {
+  constructor(private httpClient: HttpClient, ) {
 
     super();
-    this.url = baseUrl;
+    this.url = 'baseUrl'; // -> will need to create environment constants for api urls
 
   }
 
@@ -57,7 +57,7 @@ export class PropertiesService extends CoreService {
 
   getPropertyListDataLocal (): Observable<ListResponse<PropertyInfo> | null> {
 
-    return this.httpClient.get<ListResponse<PropertyInfo>>('../../assets/data/propertyData.json')   
+    return this.httpClient.get<ListResponse<PropertyInfo>>('/assets/data/propertyData.json')   
   }
 
   getProperty(tenantId: any): Observable<ListResponse<PropertyInfo> | null> {
