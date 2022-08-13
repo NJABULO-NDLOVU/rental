@@ -89,9 +89,8 @@ export class TableComponent implements OnInit {
 
   imageProfilePhoto!: string;
 
-  constructor(private router: Router, @Inject("BASE_URL") baseUrl: string) {
+  constructor(private router: Router, ) {
 
-    this.base_url = baseUrl;
 
   }
 
