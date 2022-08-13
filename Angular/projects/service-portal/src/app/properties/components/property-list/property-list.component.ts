@@ -117,7 +117,7 @@ ngAfterViewInit(): void {
 
 
   ngOnInit(): void {
-    this.tableTopContent = [CreateTableTop('Properties', '', 'house')];
+    this.tableTopContent = [CreateTableTop('Properties', '', 'building')];
 
     // this.propertiesService.getPropertyListData(this.url, "0", this.sortBy).subscribe((response) =>
 
