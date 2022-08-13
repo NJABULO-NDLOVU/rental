@@ -6,7 +6,7 @@ import IdentityInfo from 'projects/core/src/lib/models/IdentityInfo';
 
 import { Observable } from 'rxjs';
 
-import { PiribaAPI } from '../../piriba-api';
+import { RentalAPI } from '../../rental-api';
 
 import { DashboardData, TenantTotals, Totals } from '../models/common/dashboard/DashboardData';
 
@@ -27,20 +27,20 @@ export class DashboardService extends CoreService {
   //  TODO Dylan F to strong type
   getTenantData(): Observable<DashboardData<TenantTotals> | null> {
 
-    return this.get(PiribaAPI.Tenant + PiribaAPI.Dashboard);
+    return this.get(RentalAPI.Tenant + RentalAPI.Dashboard);
     
   }
 
   //  TODO Dylan F to strong type
   getDashboard(userId: number): Observable<DashboardData<Totals> | null> {
 
-    return this.get(PiribaAPI.Identities + '/' + userId + PiribaAPI.Dashboard);
+    return this.get(RentalAPI.Identities + '/' + userId + RentalAPI.Dashboard);
 
   }
 
   getSelfIdentity(): Observable<IdentityInfo | null>{
 
-    return this.get(PiribaAPI.Identities + PiribaAPI.Self);
+    return this.get(RentalAPI.Identities + RentalAPI.Self);
 
   }
 
