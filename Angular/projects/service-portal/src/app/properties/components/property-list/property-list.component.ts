@@ -117,7 +117,7 @@ ngAfterViewInit(): void {
 
 
   ngOnInit(): void {
-    this.tableTopContent = [CreateTableTop('All Tenants', '', 'grid')];
+    this.tableTopContent = [CreateTableTop('Properties', '', 'building')];
 
     // this.propertiesService.getPropertyListData(this.url, "0", this.sortBy).subscribe((response) =>
 
@@ -126,42 +126,44 @@ ngAfterViewInit(): void {
     // );
 
        
-    this.view = true;
+    // this.view = true;
 
     this.navigation = 'tenants/';
 
     (this.columns = [
       {
-        columnName: 'Tenant Name',
-        mappedProperty: 'tenantName',
+        columnName: 'Name',
+        mappedProperty: 'propetyName',
         columnWidth: 'th-width-140',
         paddingColumn: 'th-padding',
         type: 'text',
       },
 
       {
-        columnName: 'Company Name',
-        mappedProperty: 'companyName',
+        columnName: 'Area',
+        mappedProperty: 'shortAddress',
         columnWidth: 'th-width-140',
         paddingColumn: 'th-padding',
         type: 'text',
       },
 
-      {
-        columnName: 'Display Name',
-        mappedProperty: 'displayName',
-        columnWidth: 'th-width-140',
-        paddingColumn: 'th-padding',
-        type: 'text',
-      },
 
       {
-        columnName: 'Date Created',
-        mappedProperty: 'dateCreated',
+        columnName: 'Type',
+        mappedProperty: 'propertyType',
         columnWidth: 'th-width-100',
         paddingColumn: 'th-padding',
         type: 'text',
       },
+
+      {
+        columnName: 'Occupied',
+        mappedProperty: 'isVacant',
+        columnWidth: 'th-width-140',
+        paddingColumn: 'th-padding',
+        type: 'text',
+      },
+
     ]),
       console.log(this.columns);
 
@@ -170,7 +172,7 @@ ngAfterViewInit(): void {
     // CreateImage(
     //   'Display Name',
     //   'displayName',
-    //   PiribaAPI.Identities + PiribaAPI.DefaultProfilePhoto,
+    //   RentalAPI.Identities + RentalAPI.DefaultProfilePhoto,
     //   'th-width-230',
     //   'Image-size-small',
     //   true,
@@ -235,7 +237,7 @@ ngAfterViewInit(): void {
     // let photoUrl = identity.photoUrl;
 
     // return photoUrl == null || photoUrl == ''
-    //   ? `${PiribaAPI.Identities + '/' + photoUrl + '/' + PiribaAPI.Photo}`
+    //   ? `${RentalAPI.Identities + '/' + photoUrl + '/' + RentalAPI.Photo}`
     //   : `${photoUrl}`;
   }
 }
