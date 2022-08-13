@@ -4,7 +4,7 @@ import { Inject, Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { PiribaAPI } from '../../piriba-api';
+import { RentalAPI } from '../../rental-api';
 
 import { ApplicationAttributes, ApplicationsList } from '../../../../admin-portal/src/app/applications/models/ApplicationsList';
 
@@ -33,7 +33,7 @@ export class ValidatorService extends CoreService {
 
   applicationExistsFilter(applicationName: string): Observable<ApplicationsList<ApplicationAttributes> | null> {
 
-    return this.get<ApplicationsList<ApplicationAttributes>>(`${this.base_url}${PiribaAPI.Applications}` + Query('DisplayName', 'eq', applicationName));
+    return this.get<ApplicationsList<ApplicationAttributes>>(`${this.base_url}${RentalAPI.Applications}` + Query('DisplayName', 'eq', applicationName));
 
   }
 
@@ -41,7 +41,7 @@ export class ValidatorService extends CoreService {
 
   identityExistsFilter(ownerEmail: string): Observable<IdentitiesList | null> {
 
-    return this.get<IdentitiesList>(`${this.base_url}${PiribaAPI.Identities}` + Query('SystemName', 'ci', ownerEmail));
+    return this.get<IdentitiesList>(`${this.base_url}${RentalAPI.Identities}` + Query('SystemName', 'ci', ownerEmail));
 
   }
 

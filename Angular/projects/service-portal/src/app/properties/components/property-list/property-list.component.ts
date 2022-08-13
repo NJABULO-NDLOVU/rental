@@ -170,7 +170,7 @@ ngAfterViewInit(): void {
     // CreateImage(
     //   'Display Name',
     //   'displayName',
-    //   PiribaAPI.Identities + PiribaAPI.DefaultProfilePhoto,
+    //   RentalAPI.Identities + RentalAPI.DefaultProfilePhoto,
     //   'th-width-230',
     //   'Image-size-small',
     //   true,
@@ -235,7 +235,7 @@ ngAfterViewInit(): void {
     // let photoUrl = identity.photoUrl;
 
     // return photoUrl == null || photoUrl == ''
-    //   ? `${PiribaAPI.Identities + '/' + photoUrl + '/' + PiribaAPI.Photo}`
+    //   ? `${RentalAPI.Identities + '/' + photoUrl + '/' + RentalAPI.Photo}`
     //   : `${photoUrl}`;
   }
 }

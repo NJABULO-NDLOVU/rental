@@ -24,7 +24,7 @@ export abstract class CoreService {
 
   constructor(public http: HttpClient, @Inject(String) public core_url: string) { }
 
-  // Piriba Core Get method that can be used across the project for Get requests;
+  // Rental Core Get method that can be used across the project for Get requests;
 
   public get<T>(API_endpoint: string): Observable<T | null> {
 
@@ -34,7 +34,7 @@ export abstract class CoreService {
 
         map((data) => data as T), // Map the data in the request;
 
-        catchError((error: HttpResponseBase) => this.PiribaErrorHandler<T>(error)) // Catch the error and handle it;
+        catchError((error: HttpResponseBase) => this.RentalErrorHandler<T>(error)) // Catch the error and handle it;
 
       );
 
@@ -48,13 +48,13 @@ export abstract class CoreService {
 
         map((data) => data as T), // Map the data in the request;
 
-        catchError((error: HttpResponseBase) => this.PiribaErrorHandler<T>(error)) // Catch the error and handle it;
+        catchError((error: HttpResponseBase) => this.RentalErrorHandler<T>(error)) // Catch the error and handle it;
 
       )
 
   }
 
-  // Piriba Core Post method that can be used across the project for Post requests;
+  // Rental Core Post method that can be used across the project for Post requests;
 
   public post<TPayload, TResponse>(API_payload: TPayload, API_endpoint: string): Observable<TResponse | null> {
 
@@ -64,13 +64,13 @@ export abstract class CoreService {
 
         map((data) => data as TResponse), // Map the data in the request;
 
-        catchError((error: HttpResponseBase) => this.PiribaErrorHandler<TResponse>(error)) // Catch the error and handle it;
+        catchError((error: HttpResponseBase) => this.RentalErrorHandler<TResponse>(error)) // Catch the error and handle it;
 
       );
 
   }
 
-  // Piriba Core Put method that can be used across the project for Put requests;
+  // Rental Core Put method that can be used across the project for Put requests;
 
   public put<T>(API_model: T, API_endpoint: string): Observable<T | null> {
 
@@ -80,15 +80,15 @@ export abstract class CoreService {
 
         map((data) => data as T), // Map the data in the request;
 
-        catchError((error: HttpResponseBase) => this.PiribaErrorHandler<T>(error)) // Catch the error and handle it;
+        catchError((error: HttpResponseBase) => this.RentalErrorHandler<T>(error)) // Catch the error and handle it;
 
       )
 
   }
 
-  // Private error handler for Piriba APi calls
+  // Private error handler for Rental APi calls
 
-  private PiribaErrorHandler<T>(error: HttpResponseBase): Observable<T | null> {
+  private RentalErrorHandler<T>(error: HttpResponseBase): Observable<T | null> {
 
     if (error.status == 500) {
 
