@@ -1,9 +1,12 @@
 FROM python:3.8-slim as dependencies
 
-WORKDIR /app/
+WORKDIR /app
 RUN python3 -m venv /venv
 ENV PATH=/venv/bin:$PATH
 
+RUN pwd
+RUN ls
+COPY Justfile .
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

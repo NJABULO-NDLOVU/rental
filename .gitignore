@@ -128,9 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-requirements/dev.txt
-requirements/dev-*.txt
-
-
 # Node modules
 node_modules
